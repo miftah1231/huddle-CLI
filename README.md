@@ -23,6 +23,16 @@ Run the command below to auto-install everything (including ffmpeg and firewall 
 bash <(curl -fsSL https://raw.githubusercontent.com/miftah1231/huddle-CLI/main/setup.sh)
 ```
 
+Check UFW status:
+```bash
+sudo ufw status numbered
+```
+
+Check ffmpeg version:
+```bash
+ffmpeg -version
+```
+
 This script will:
 - Install `ffmpeg`
 - Open all necessary ports based on detected core count
@@ -83,6 +93,11 @@ sudo ufw allow 14100:14116/tcp
 sudo ufw allow 14100:14116/udp
 ```
 
+Check UFW status:
+```bash
+sudo ufw status numbered
+```
+
 > 📌 Adjust port ranges to match your actual core count.
 
 ---
@@ -101,10 +116,9 @@ ffmpeg -version
 
 ---
 
-## 📎 Official Resources
+## 📎 Official Guide
 
-- Website: [https://huddle01.com](https://huddle01.com)  
-- Official Installer Script: [https://huddle01.network/api/install.sh](https://huddle01.network/api/install.sh)
+- https://www.huddle01.network/guides/How-to-run-a-Media-Node-via-CLI
 
 ---
 
