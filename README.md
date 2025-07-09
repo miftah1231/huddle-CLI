@@ -15,12 +15,12 @@ Choose a server or VPS that meets or exceeds the following specs:
 
 ## 🧭 Step-by-Step Installation
 
-### 1. Quick Auto-Install ffmpeg and setting your Port automatic
+### 1. Quick Auto-Install of ffmpeg and Automatic Port Setup
 
 ```bash
 bash <(curl -fsSL https://raw.githubusercontent.com/miftah1231/huddle-CLI/main/setup.sh)
 ```
-This script will:
+This script will automatically:
 - Install `ffmpeg`
 - Open all necessary ports based on detected core count
 - Print `ffmpeg` version and firewall status
@@ -66,7 +66,7 @@ hudl --version
 ### 4. Configure a Burner Wallet
 
 > ⚠️ **Do not use your main wallet.**
-You can put your Private key or Generate one in the CLI
+You can input your private key or generate a new one via the CLI
 
 ```bash
 hudl wallet configure
