@@ -1,6 +1,7 @@
+
 # 🚀 Huddle01 Media Node Setup Guide
 
-This guide helps you install and run a **Huddle01 Media Node** using their official script.
+This is an unofficial setup guide for running a Huddle01 Media Node using their official script.
 
 ---
 
@@ -19,28 +20,30 @@ Choose based on your hardware:
 
 Huddle01 requires the following ports to be open on your firewall:
 
-- **TCP:** `14000`, `14001`, `14002`
-- **TCP + UDP:** `14003`, `14004`
+- **TCP:** 14000, 14001, 14002  
+- **TCP + UDP:** 14003, 14004  
 - **Dynamic Range (depends on CPU cores):**  
   Open ports from `14100` to `14100 + (2 × number of cores)`
 
-🔸 Example for **4 cores**:
+### Example for 4 cores:
 ```bash
 sudo ufw allow 14100:14108/tcp
 sudo ufw allow 14100:14108/udp
-🔸 Example for 8 cores:
+```
 
-bash
-Copy
-Edit
+### Example for 8 cores:
+```bash
 sudo ufw allow 14100:14116/tcp
 sudo ufw allow 14100:14116/udp
-Adjust the port range based on your actual CPU core count.
+```
 
-🔐 Open the Required Ports via UFW (Ubuntu Firewall)
-bash
-Copy
-Edit
+> Adjust the port range based on your actual CPU core count.
+
+---
+
+## 🔐 Open Ports Using UFW (Ubuntu Firewall)
+
+```bash
 sudo ufw enable
 sudo ufw allow ssh
 
@@ -57,41 +60,50 @@ sudo ufw allow 14100:14116/udp
 
 # Check firewall status
 sudo ufw status numbered
-🧰 Installation Steps
-Install ffmpeg
+```
 
-bash
-Copy
-Edit
+---
+
+## 🧰 Installation Steps
+
+### 1. Install ffmpeg
+```bash
 sudo apt update
 sudo apt install ffmpeg -y
-Verify ffmpeg installation
+```
 
-bash
-Copy
-Edit
+### 2. Verify ffmpeg installation
+```bash
 ffmpeg -version
-Install Media Node CLI
+```
 
-bash
-Copy
-Edit
+### 3. Install Huddle01 Media Node CLI
+```bash
 curl -fsSL https://huddle01.network/api/install.sh | bash
-Verify CLI installed
+```
 
-bash
-Copy
-Edit
+### 4. Verify CLI installation
+```bash
 hudl --version
-Set up a burner wallet (Do NOT use your main wallet)
+```
 
-bash
-Copy
-Edit
+### 5. Configure your burner wallet (DO NOT use your main wallet)
+```bash
 hudl wallet configure
-Start the node in the background
+```
 
-bash
-Copy
-Edit
+### 6. Start the node in the background
+```bash
 hudl node start -d
+```
+
+---
+
+## 📎 Official Resources
+
+- Website: [https://huddle01.com](https://huddle01.com)  
+- Installer Script: [https://huddle01.network/api/install.sh](https://huddle01.network/api/install.sh)
+
+---
+
+> 📌 This guide is community-written and based on the official installation script.
