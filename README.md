@@ -1,6 +1,4 @@
-# 🚀 Huddle01 Media Node Setup Guide
-
-> 🛠️ *Unofficial community-written guide for setting up a Huddle01 Media Node using their official script.*
+# 🚀 Huddle01 Media Node Setup Guide by Airdrop Analyst
 
 ---
 
@@ -15,9 +13,9 @@ Choose a server or VPS that meets or exceeds the following specs:
 
 ---
 
-## ⚡ Quick Auto-Install ffmpeg and setting your Port automatic
+## 🧭 Step-by-Step Installation
 
-Run the command below to auto-install including ffmpeg and firewall rules:
+### 1. Quick Auto-Install ffmpeg and setting your Port automatic
 
 ```bash
 bash <(curl -fsSL https://raw.githubusercontent.com/miftah1231/huddle-CLI/main/setup.sh)
@@ -51,34 +49,30 @@ Check ffmpeg version:
 ```bash
 ffmpeg -version
 ```
-
-
-
 ---
 
-## 🧭 Step-by-Step Installation (Manual)
-
-### 1. Install Huddle01 Media Node CLI
+### 2. Install Huddle01 Media Node CLI
 
 ```bash
 curl -fsSL https://huddle01.network/api/install.sh | bash
 ```
 
-### 2. Check CLI Version
+### 3. Check CLI Version
 
 ```bash
 hudl --version
 ```
 
-### 3. Configure a Burner Wallet
+### 4. Configure a Burner Wallet
 
 > ⚠️ **Do not use your main wallet.**
+You can put your Private key or Generate one in the CLI
 
 ```bash
 hudl wallet configure
 ```
 
-### 4. Start the Node in the Background
+### 5. Start the Node in the Background
 
 ```bash
 hudl node start -d
