@@ -78,7 +78,11 @@ hudl wallet configure
 ```bash
 hudl node start -d
 ```
+### 6. Check Status Node
 
+```bash
+hudl node status
+```
 ---
 
 ## 🌐 Required Ports (Manual Firewall Configuration)
