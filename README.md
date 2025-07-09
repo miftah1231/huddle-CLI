@@ -23,10 +23,23 @@ Run the command below to auto-install everything (including ffmpeg and firewall 
 bash <(curl -fsSL https://raw.githubusercontent.com/miftah1231/huddle-CLI/main/setup.sh)
 ```
 
-Check UFW status:
+🔧 Verifying Open Ports (Optional)
+
 ```bash
 sudo ufw status numbered
 ```
+
+> If you're using the **auto-install script**, all required ports are already opened based on your CPU core count.  
+> You can run the command above to double-check.
+> 
+> Example (4-core system):  
+> You should see `14100` to `14108` open for both TCP and UDP.
+
+```bash
+sudo ufw allow 14100:14108/tcp
+sudo ufw allow 14100:14108/udp
+```
+
 
 Check ffmpeg version:
 ```bash
