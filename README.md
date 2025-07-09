@@ -22,6 +22,12 @@ Run the command below to auto-install everything (including ffmpeg and firewall 
 ```bash
 bash <(curl -fsSL https://raw.githubusercontent.com/miftah1231/huddle-CLI/main/setup.sh)
 ```
+This script will:
+- Install `ffmpeg`
+- Open all necessary ports based on detected core count
+- Print `ffmpeg` version and firewall status
+
+> ✅ You can still inspect the changes manually (see below for details).
 
 🔧 Verifying Open Ports (Optional)
 
@@ -46,12 +52,7 @@ Check ffmpeg version:
 ffmpeg -version
 ```
 
-This script will:
-- Install `ffmpeg`
-- Open all necessary ports based on detected core count
-- Print `ffmpeg` version and firewall status
 
-> ✅ You can still inspect the changes manually (see below for details).
 
 ---
 
