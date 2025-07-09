@@ -16,55 +16,49 @@ Choose based on your hardware:
 
 ---
 
-## 🌐 Required Open Ports
+## ⚡ Quick Auto-Install (1 Line Setup)
 
-Huddle01 requires the following ports to be open on your firewall:
+Run this command to install ffmpeg and open all required ports automatically (adjusted to your CPU cores):
+
+```bash
+bash <(curl -fsSL https://raw.githubusercontent.com/miftah1231/huddle-CLI/main/setup.sh)
+```
+
+This will:
+- Install `ffmpeg`
+- Open required UFW ports (based on detected core count)
+- Print `ffmpeg` version and firewall status
+
+> You can still verify or inspect everything manually if needed.
+
+---
+
+## 🌐 Required Open Ports (If Doing Manually)
+
+Huddle01 requires the following ports to be open:
 
 - **TCP:** 14000, 14001, 14002  
 - **TCP + UDP:** 14003, 14004  
 - **Dynamic Range (depends on CPU cores):**  
   Open ports from `14100` to `14100 + (2 × number of cores)`
 
-### Example for 4 cores:
+Example for 4 cores:
 ```bash
 sudo ufw allow 14100:14108/tcp
 sudo ufw allow 14100:14108/udp
 ```
 
-### Example for 8 cores:
+Example for 8 cores:
 ```bash
 sudo ufw allow 14100:14116/tcp
 sudo ufw allow 14100:14116/udp
 ```
 
-> Adjust the port range based on your actual CPU core count.
+> Adjust based on your actual CPU core count.
 
 ---
 
-## 🔐 Open Ports Using UFW (Ubuntu Firewall)
-
-```bash
-sudo ufw enable
-sudo ufw allow ssh
-
-# Open base TCP ports
-sudo ufw allow 14000:14002/tcp
-
-# Open TCP and UDP for additional ports
-sudo ufw allow 14003:14004/tcp
-sudo ufw allow 14003:14004/udp
-
-# Open dynamic ports (adjust as needed based on CPU cores)
-sudo ufw allow 14100:14116/tcp
-sudo ufw allow 14100:14116/udp
-
-# Check firewall status
-sudo ufw status numbered
-```
-
----
-
-## 🧰 Installation Steps
+## 🧰 Manual Installation Steps
 
 ### 1. Install ffmpeg
 ```bash
@@ -72,7 +66,7 @@ sudo apt update
 sudo apt install ffmpeg -y
 ```
 
-### 2. Verify ffmpeg installation
+### 2. (Optional) Verify ffmpeg
 ```bash
 ffmpeg -version
 ```
@@ -82,17 +76,17 @@ ffmpeg -version
 curl -fsSL https://huddle01.network/api/install.sh | bash
 ```
 
-### 4. Verify CLI installation
+### 4. Check CLI version
 ```bash
 hudl --version
 ```
 
-### 5. Configure your burner wallet (DO NOT use your main wallet)
+### 5. Configure a burner wallet (DO NOT use your main wallet)
 ```bash
 hudl wallet configure
 ```
 
-### 6. Start the node in the background
+### 6. Start the node in background
 ```bash
 hudl node start -d
 ```
