@@ -17,7 +17,7 @@ Choose a server or VPS that meets or exceeds the following specs:
 
 ## ⚡ Quick Auto-Install ffmpeg and setting your Port automatic
 
-Run the command below to auto-install everything (including ffmpeg and firewall rules):
+Run the command below to auto-install including ffmpeg and firewall rules:
 
 ```bash
 bash <(curl -fsSL https://raw.githubusercontent.com/miftah1231/huddle-CLI/main/setup.sh)
