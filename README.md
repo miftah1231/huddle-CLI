@@ -1,94 +1,102 @@
-
 # 🚀 Huddle01 Media Node Setup Guide
 
-This is an unofficial setup guide for running a Huddle01 Media Node using their official script.
+> 🛠️ *Unofficial community-written guide for setting up a Huddle01 Media Node using their official script.*
 
 ---
 
 ## ⚙️ Recommended System Requirements
 
-Choose based on your hardware:
+Choose a server or VPS that meets or exceeds the following specs:
 
-- **4 vCPU / 250 Mbps** → supports up to 10 node keys  
-- **8 vCPU / 1 Gbps** → supports up to 40 node keys
-
-> Always use a VPS or server that meets or exceeds these requirements.
+| Specs                  | Max Supported Node Keys |
+|------------------------|--------------------------|
+| **4 vCPU / 250 Mbps**  | Up to 10 keys            |
+| **8 vCPU / 1 Gbps**    | Up to 40 keys            |
 
 ---
 
-## ⚡ Quick Auto-Install (1 Line Setup)
+## ⚡ Quick Auto-Install (One-Line Setup)
 
-Run this command to install ffmpeg and open all required ports automatically (adjusted to your CPU cores):
+Run the command below to auto-install everything (including ffmpeg and firewall rules):
 
 ```bash
 bash <(curl -fsSL https://raw.githubusercontent.com/miftah1231/huddle-CLI/main/setup.sh)
 ```
 
-This will:
+This script will:
 - Install `ffmpeg`
-- Open required UFW ports (based on detected core count)
+- Open all necessary ports based on detected core count
 - Print `ffmpeg` version and firewall status
 
-> You can still verify or inspect everything manually if needed.
+> ✅ You can still inspect the changes manually (see below for details).
 
 ---
 
-## 🌐 Required Open Ports (If Doing Manually)
+## 🧭 Step-by-Step Installation (Manual)
 
-Huddle01 requires the following ports to be open:
+### 1. Install Huddle01 Media Node CLI
+
+```bash
+curl -fsSL https://huddle01.network/api/install.sh | bash
+```
+
+### 2. Check CLI Version
+
+```bash
+hudl --version
+```
+
+### 3. Configure a Burner Wallet
+
+> ⚠️ **Do not use your main wallet.**
+
+```bash
+hudl wallet configure
+```
+
+### 4. Start the Node in the Background
+
+```bash
+hudl node start -d
+```
+
+---
+
+## 🌐 Required Ports (Manual Firewall Configuration)
+
+If you're not using the auto-install script, open the following ports manually:
 
 - **TCP:** 14000, 14001, 14002  
 - **TCP + UDP:** 14003, 14004  
-- **Dynamic Range (depends on CPU cores):**  
-  Open ports from `14100` to `14100 + (2 × number of cores)`
+- **Dynamic (based on core count):**  
+  From `14100` to `14100 + (2 × number of cores)`
 
-Example for 4 cores:
+**Example for 4 cores:**
 ```bash
 sudo ufw allow 14100:14108/tcp
 sudo ufw allow 14100:14108/udp
 ```
 
-Example for 8 cores:
+**Example for 8 cores:**
 ```bash
 sudo ufw allow 14100:14116/tcp
 sudo ufw allow 14100:14116/udp
 ```
 
-> Adjust based on your actual CPU core count.
+> 📌 Adjust port ranges to match your actual core count.
 
 ---
 
-## 🧰 Manual Installation Steps
+## 🧰 Optional: Manual ffmpeg Installation
 
-### 1. Install ffmpeg
 ```bash
 sudo apt update
 sudo apt install ffmpeg -y
 ```
 
-### 2. (Optional) Verify ffmpeg
+To verify installation:
 ```bash
 ffmpeg -version
-```
-
-### 3. Install Huddle01 Media Node CLI
-```bash
-curl -fsSL https://huddle01.network/api/install.sh | bash
-```
-
-### 4. Check CLI version
-```bash
-hudl --version
-```
-
-### 5. Configure a burner wallet (DO NOT use your main wallet)
-```bash
-hudl wallet configure
-```
-
-### 6. Start the node in background
-```bash
-hudl node start -d
 ```
 
 ---
@@ -96,8 +104,8 @@ hudl node start -d
 ## 📎 Official Resources
 
 - Website: [https://huddle01.com](https://huddle01.com)  
-- Installer Script: [https://huddle01.network/api/install.sh](https://huddle01.network/api/install.sh)
+- Official Installer Script: [https://huddle01.network/api/install.sh](https://huddle01.network/api/install.sh)
 
 ---
 
-> 📌 This guide is community-written and based on the official installation script.
+> ℹ️ *This guide is maintained by the community and based on Huddle01's official installation script.*
