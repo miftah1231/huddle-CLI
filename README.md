@@ -11,7 +11,7 @@ Choose a server or VPS that meets or exceeds the following specs:
 | **4 vCPU / 8GB RAM**  | Up to 10 keys            |
 | **8 vCPU / 16GB RAM**    | Up to 40 keys            |
 
-Make sure your VPS has an internet connection of at least 1 Gbps
+###Make sure your VPS has an internet connection of at least 1 Gbps
 ---
 
 ## 🧭 Step-by-Step Installation
