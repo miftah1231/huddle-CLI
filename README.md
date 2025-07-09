@@ -15,7 +15,7 @@ Choose a server or VPS that meets or exceeds the following specs:
 
 ---
 
-## ⚡ Quick Auto-Install (One-Line Setup)
+## ⚡ Quick Auto-Install ffmpeg and setting your Port automatic
 
 Run the command below to auto-install everything (including ffmpeg and firewall rules):
 
